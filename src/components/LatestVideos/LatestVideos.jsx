@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Youtube, Calendar, Eye, Play } from 'lucide-react';
+import { Calendar, Eye, Play } from 'lucide-react';
 import './LatestVideos.css';
 
 const LatestVideos = () => {
@@ -64,10 +64,6 @@ const LatestVideos = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="youtube-badge">
-            <Youtube className="youtube-icon" />
-            <span>Broadcasts & Insights</span>
-          </div>
           <h2 className="videos-title text-white">Latest Videos</h2>
           <p className="videos-subtitle">Candid, experience-driven conversations with senior leaders in healthcare and technology.</p>
         </motion.div>
