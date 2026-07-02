@@ -1,0 +1,5 @@
+# robots.txt for matt-nam portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://matt-nam.vercel.app/sitemap.xml

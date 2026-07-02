@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Resume.css';
@@ -10,6 +11,11 @@ const Resume = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Resume — Matthew Nam | Digital Health & AdTech Commercial Leader</title>
+        <meta name="description" content="View the professional resume of Matthew Nam — Senior Director at Omnichannel Strategy, VP at Publisher Health, Forbes Next 1000 Honoree. Experience in digital health, programmatic advertising, and ad operations." />
+        <link rel="canonical" href="https://matt-nam.vercel.app/resume" />
+      </Helmet>
       {/* Action Bar */}
       <motion.div
         className="resume-actions"

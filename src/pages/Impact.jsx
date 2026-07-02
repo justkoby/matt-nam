@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
@@ -12,6 +13,11 @@ const Impact = () => {
 
   return (
     <div className="impact-page">
+      <Helmet>
+        <title>Humanitarian Impact — Matthew Nam | Growing Coffee, Empowering Communities</title>
+        <meta name="description" content="Discover Matthew Nam's humanitarian impact — working directly with coffee farmers in Colombia, supporting women farmers, and celebrating farmer excellence through Win Win Coffee." />
+        <link rel="canonical" href="https://matt-nam.vercel.app/impact" />
+      </Helmet>
       <Navbar />
       
       <main>
