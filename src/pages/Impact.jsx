@@ -31,7 +31,7 @@ const Impact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Humanitarian Impact:
+                Global impact
               </motion.span>
               
               <motion.h1 
@@ -40,7 +40,7 @@ const Impact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                Growing Coffee.<br />Empowering Communities.
+                Empowering communities.
               </motion.h1>
             </div>
           </div>
@@ -63,13 +63,22 @@ const Impact = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="impact-section-title">Why Farmers?</h2>
+                <h2 className="impact-section-title">Why farmers, why coffee</h2>
                 <div className="impact-desc-list">
                   <p className="impact-desc">
-                    The people who produce coffee are often the furthest from the systems that control how it moves through the world.
+                    Coffee became a window into something much bigger.
                   </p>
                   <p className="impact-desc">
-                    Spending time with farmers revealed how complex and fragmented the supply chain behind coffee really is. That realization shaped my focus on building more connected systems that make sourcing, production, and distribution easier for everyone involved.
+                    The more time I spent with coffee farmers, the more I realized they weren't just growing a crop. They were part of one of the world's most complex supply chains, yet often had the least visibility into where their coffee went or how value was created.
+                  </p>
+                  <p className="impact-desc">
+                    That experience changed how I think about global trade.
+                  </p>
+                  <p className="impact-desc">
+                    I began to see the interconnected systems linking farms, processors, exporters, manufacturers, distributors, retailers, and consumers across continents. When those systems are disconnected, everyone experiences the friction.
+                  </p>
+                  <p className="impact-desc">
+                    Today, that perspective shapes my work: building technology that makes global supply chains more connected, transparent, and efficient. Coffee was simply where I learned the lesson first.
                   </p>
                 </div>
               </motion.div>
@@ -117,7 +126,7 @@ const Impact = () => {
                     When I visit farms, the goal isn't simply to source coffee. It's to listen, learn, and build relationships with the producers whose work defines the quality of what we drink.
                   </p>
                   <p className="impact-desc">
-                    Those relationships continue to shape how I think about sourcing, transparency, and the broader systems that connect producers to the global coffee market.
+                    Those relationships continue to shape how I think about sourcing, transparency, and the broader systems that connect producers to the global market.
                   </p>
                 </div>
               </motion.div>
@@ -157,33 +166,9 @@ const Impact = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <img src="/farm-5.webp" alt="Matt Nam standing with a group of female coffee farmers" className="impact-img" />
+                <img src="/image-new.png" alt="Supporting Women Farmers" className="impact-img" />
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* 4. From Farm to Cup (Centered Text, No Image) */}
-        <section className="impact-section bg-light-grey">
-          <div className="container">
-            <motion.div 
-              className="impact-center-content"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="impact-section-title">From Farm to Cup</h2>
-              <p className="impact-desc">
-                Coffee offers a clear window into how supply chains work. A single cup depends on farmers, processors, exporters, roasters, and distributors working in coordination.
-              </p>
-              <p className="impact-desc">
-                Evaluating coffee through cupping is one small step in that journey. It's a reminder that every finished product reflects a network of people and decisions long before it reaches the consumer.
-              </p>
-              <p className="impact-desc">
-                That perspective continues to shape how I approach supply chains and the systems that connect them.
-              </p>
-            </motion.div>
           </div>
         </section>
 

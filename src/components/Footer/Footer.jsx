@@ -22,8 +22,8 @@ const Footer = () => {
               <img src="/logo-main.svg" alt="Matt Nam Logo" className="footer-logo" />
             </div>
             <div className="footer-status">
-              <p>Currently based in Philadelphia, USA.</p>
-              <p>Available for strategic consultations and advisory roles.</p>
+              <p className="footer-lead-text">Let's build something meaningful together.</p>
+              <p>Available for strategic consultations, advisory roles, and speaking engagements.</p>
             </div>
           </motion.div>
 
@@ -35,21 +35,33 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <div className="footer-info-list">
-              <a href="mailto:mnam8906@gmail.com" className="footer-info-item">
-                <div className="info-icon-wrapper">
-                  <Mail className="info-icon" />
+            {/* Contact Form */}
+            <form 
+              className="footer-contact-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+                const mailtoUrl = `mailto:matt@vianexta.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+                window.location.href = mailtoUrl;
+              }}
+            >
+              <h4 className="contact-form-title">Send a Message</h4>
+              <div className="form-fields-row">
+                <div className="form-group">
+                  <input type="text" name="name" placeholder="Your Name" required className="form-input" />
                 </div>
-                <span>mnam8906@gmail.com</span>
-              </a>
-              
-              <div className="footer-info-item non-interactive">
-                <div className="info-icon-wrapper">
-                  <MapPin className="info-icon" />
+                <div className="form-group">
+                  <input type="email" name="email" placeholder="Your Email" required className="form-input" />
                 </div>
-                <span>Philadelphia, USA</span>
+                <div className="form-group form-group-message">
+                  <input type="text" name="message" placeholder="Message" required className="form-input" />
+                </div>
+                <button type="submit" className="btn btn-primary contact-submit-btn">Send</button>
               </div>
-            </div>
+            </form>
           </motion.div>
         </div>
 

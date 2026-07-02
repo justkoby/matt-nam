@@ -41,13 +41,6 @@ const Resume = () => {
         <header className="resume-header">
           <div className="resume-initials">MN</div>
           <h1 className="resume-name">Matthew Nam</h1>
-          <div className="resume-contact">
-            <span>mnam8906@gmail.com</span>
-            <span className="resume-contact-sep">|</span>
-            <span>(347) 346-0400</span>
-            <span className="resume-contact-sep">|</span>
-            <span>Philadelphia, USA</span>
-          </div>
         </header>
 
         {/* ── Professional Summary ── */}
