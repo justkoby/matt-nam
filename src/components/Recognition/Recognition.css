@@ -1,0 +1,142 @@
+.recognition {
+  background: var(--primary-white);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.recognition-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Card: Forbes */
+.recognition-card {
+  background: #111625; /* Dark navy/black */
+  padding: 60px 50px;
+  border-radius: 24px;
+  color: var(--primary-white);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 20px 45px rgba(17, 22, 37, 0.15);
+  position: relative;
+}
+
+.recognition-badge-icon {
+  color: #3b82f6; /* Soft blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.recognition-card-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-top: 10px;
+}
+
+.recognition-card-desc {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Right Content: Timeline */
+.recognition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.recognition-header-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recognition-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-black);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.recognition-desc {
+  font-size: 1.05rem;
+  color: #48484a;
+  line-height: 1.6;
+}
+
+.recognition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.recognition-item {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.recognition-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.recognition-year {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2563eb; /* Royal blue */
+  min-width: 60px;
+}
+
+.recognition-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recognition-item-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-black);
+}
+
+.recognition-item-issuer {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .recognition {
+    padding: 60px 0;
+  }
+  
+  .recognition-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .recognition-card {
+    padding: 40px 30px;
+  }
+  
+  .recognition-card-title {
+    font-size: 1.8rem;
+  }
+  
+  .recognition-title {
+    font-size: 2.2rem;
+  }
+}

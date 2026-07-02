@@ -1,0 +1,282 @@
+.impact-page {
+  background: var(--primary-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Impact Hero Section */
+.impact-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.15) 100%), url('/impact-hero.webp') no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.impact-hero-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.impact-hero-content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.impact-hero-tag {
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.impact-hero-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--primary-white);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+/* Storytelling Sections */
+.impact-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.bg-white {
+  background-color: var(--primary-white);
+}
+
+.bg-light-grey {
+  background-color: var(--secondary-grey);
+}
+
+.bg-dark-navy {
+  background-color: #080c14;
+  color: var(--primary-white);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.impact-image-wrapper {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  background: var(--secondary-grey);
+  transition: transform 0.5s ease;
+}
+
+.impact-image-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.impact-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Special Aspect Ratio for Farmer Excellence image */
+.bg-dark-navy .impact-img {
+  aspect-ratio: 16 / 11;
+}
+
+.impact-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.impact-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-black);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.bg-dark-navy .impact-section-title {
+  color: var(--primary-white);
+}
+
+.impact-desc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.impact-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563; /* Sleek slate grey for legibility */
+}
+
+.bg-dark-navy .impact-desc {
+  color: #cbd5e1;
+}
+
+/* Full Width Cupping Section */
+.impact-center-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.impact-center-content .impact-section-title {
+  margin-bottom: 10px;
+}
+
+.impact-center-content .impact-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .impact-grid {
+    gap: 50px;
+  }
+  
+  .impact-hero-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .impact-hero {
+    min-height: 70vh;
+  }
+  
+  .impact-hero-title {
+    font-size: 2.6rem;
+  }
+  
+  .impact-section {
+    padding: 70px 0;
+  }
+  
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  /* Ensure image goes above text on mobile for alternating sections */
+  .grid-img-left .impact-image-wrapper {
+    order: -1;
+  }
+  
+  .impact-section-title {
+    font-size: 2rem;
+  }
+  
+  .impact-img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 576px) {
+  .impact-hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Celebrating Farmer Excellence Full-Bleed Section */
+.excellence-section {
+  background-color: #080c14;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.excellence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-height: 600px;
+}
+
+.excellence-image-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.excellence-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.excellence-text-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%;
+}
+
+.excellence-text-inner {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.excellence-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-white);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.excellence-desc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.excellence-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+@media (max-width: 992px) {
+  .excellence-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .excellence-image-col {
+    height: 450px;
+  }
+  
+  .excellence-text-col {
+    padding: 60px 20px;
+  }
+  
+  .excellence-title {
+    font-size: 2rem;
+  }
+}
+

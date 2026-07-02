@@ -1,0 +1,121 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background: linear-gradient(to right, #000000 0%, #000000 35%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%), url('/matt-hero.webp') no-repeat right center / cover;
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hero-logo-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.hero-logo {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 698 / 161;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 480px;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.hero .btn {
+  padding: 14px 35px;
+  font-size: 0.95rem;
+  border-radius: 50px;
+}
+
+.hero .btn-primary {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--secondary-grey);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+.hero .btn-outline {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--primary-white);
+}
+
+.hero .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-white);
+  color: var(--primary-white);
+  transform: translateY(-2px);
+}
+
+.hero-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.hero-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.hero-divider path {
+  fill: var(--primary-white);
+}
+
+@media (max-width: 992px) {
+  .hero {
+    background: url('/matt-hero.jpg') no-repeat center center / cover;
+    min-height: 100vh;
+    padding-top: 0;
+  }
+  
+  .hero-content {
+    display: none;
+  }
+
+  .hero-divider svg {
+    height: 50px;
+  }
+}
