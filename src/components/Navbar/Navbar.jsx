@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // When location hash changes, scroll to the element
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const navLinks = [
     { name: 'About', path: '/#about' },
     { name: 'Expertise', path: '/#expertise' },
@@ -22,6 +35,25 @@ const Navbar = () => {
     { name: 'Updates', path: '/#updates' },
     { name: 'Impact', path: '/impact' },
   ];
+
+  const handleNavClick = (e, link) => {
+    setIsMenuOpen(false);
+
+    // Hash links that target the homepage
+    if (link.path.startsWith('/#')) {
+      e.preventDefault();
+      const hash = link.path.substring(1); // e.g. "#about"
+
+      if (location.pathname === '/') {
+        // Already on homepage — just scroll
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Navigate to homepage first, then scroll
+        navigate('/' + hash);
+      }
+    }
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -36,7 +68,7 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={`nav-item ${location.pathname + location.hash === link.path ? 'active' : ''}`}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, link)}
             >
               {link.name}
             </Link>
