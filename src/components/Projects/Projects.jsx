@@ -8,7 +8,7 @@ const Projects = () => {
       logo: '/vianexta.png',
       role: 'Founder',
       title: 'ViaNexta',
-      desc: 'Building the AI infrastructure that turns complex private label supply chains into a few simple clicks.',
+      desc: 'The AI infrastructure that simplifies complex private label supply chains with an agentic workforce',
       tags: ['Supply Chain', 'AI', 'Startup Scale'],
       link: 'https://www.vianexta.com/',
       btnText: 'Visit Project',

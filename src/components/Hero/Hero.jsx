@@ -23,7 +23,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-subtitle"
           >
-            I work at the intersection of strategy, technology, and growth, helping platforms, teams, and ideas evolve into systems that actually work.
+            I build platforms where strategy, technology, and revenue finally move together.
           </motion.p>
           
           <motion.div 

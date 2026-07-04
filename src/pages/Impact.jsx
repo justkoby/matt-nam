@@ -166,7 +166,7 @@ const Impact = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <img src="/image-new.png" alt="Supporting Women Farmers" className="impact-img" />
+                <img src="/support-women.png" alt="Supporting Women Farmers" className="impact-img" />
               </motion.div>
             </div>
           </div>
