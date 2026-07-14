@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   padding-top: 100px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.15) 100%), url('/impact-hero.webp') no-repeat center center / cover;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.15) 100%), url('/impact-hero.jpg') no-repeat center center / cover;
   overflow: hidden;
 }
 
