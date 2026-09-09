@@ -1,10 +1,32 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Eye, Play } from 'lucide-react';
+import { Calendar, Eye, Play, ExternalLink } from 'lucide-react';
 import './LatestVideos.css';
 
 const LatestVideos = () => {
   const videos = [
+    {
+      id: 'ujMRdY9i_NM',
+      episode: 'Episode 7',
+      title: 'Not All Data Is Equal: Recency, Multimodal Data, Hidden Treaters',
+      guest: 'Scott Phillips',
+      role: 'VP of Real World Data at Diaceutics',
+      desc: 'Exploring why volume and speed are not substitutes for quality in healthcare data, and how diagnostically driven intent signals and multimodal recency identify the right HCPs at the exact moments that matter.',
+      views: '6.7K views',
+      date: 'August 2026',
+      duration: '16:21'
+    },
+    {
+      id: 'm6XbbRqTESU',
+      episode: 'Episode 6',
+      title: 'Context Matters More Than Channel: Intent Signals and HCP Precision',
+      guest: 'Michael Cole',
+      role: 'Chief Strategic Development Officer at Relevate Health',
+      desc: 'Why context matters more than channel when engaging physicians, and how intent signals and clinical workflow alignment create authentic, measurable HCP engagement.',
+      views: '5.6K views',
+      date: 'July 2026',
+      duration: '15:58'
+    },
     {
       id: '95RgcC2rtaE',
       episode: 'Episode 4',
@@ -15,6 +37,17 @@ const LatestVideos = () => {
       views: '1.2K views',
       date: 'May 14, 2026',
       duration: '22:15'
+    },
+    {
+      id: 's9OfhKwmE2k',
+      episode: 'Episode 3',
+      title: 'Context is King: AI, Relevancy, and the Connected Consumer Journey',
+      guest: 'Michael Joachim',
+      role: 'Healthcare Marketing Partner',
+      desc: 'Exploring how AI and content relevancy are transforming patient engagement and data connections across the modern connected consumer journey.',
+      views: '920 views',
+      date: 'April 10, 2026',
+      duration: '20:05'
     },
     {
       id: 'F53vQk9Ug4Y',
@@ -37,21 +70,13 @@ const LatestVideos = () => {
       views: '1.5K views',
       date: 'Feb 18, 2026',
       duration: '25:10'
-    },
-    {
-      id: 's9OfhKwmE2k',
-      episode: 'Episode 3',
-      title: 'Context is King: AI, Relevancy, and the Connected Consumer Journey',
-      guest: 'Michael Joachim',
-      role: 'Healthcare Marketing Partner',
-      desc: 'Exploring how AI and content relevancy are transforming patient engagement and data connections across the modern connected consumer journey.',
-      views: '920 views',
-      date: 'April 10, 2026',
-      duration: '20:05'
     }
   ];
 
-  const [activeVideo, setActiveVideo] = useState(videos[0]);
+  const [selectedVideoId, setSelectedVideoId] = useState(null);
+  const activeVideo = selectedVideoId 
+    ? (videos.find(v => v.id === selectedVideoId) || videos[0]) 
+    : videos[0];
   const otherVideos = videos.filter(v => v.id !== activeVideo.id);
 
   return (
@@ -69,7 +94,7 @@ const LatestVideos = () => {
         </motion.div>
 
         <div className="videos-layout">
-          {/* Main Player & Alternative Thumbnails */}
+          {/* Main Player & Details */}
           <div className="main-player-column">
             <motion.div 
               className="player-container"
@@ -115,14 +140,24 @@ const LatestVideos = () => {
 
             {/* Other Videos List */}
             <div className="other-videos-section">
-              <h4 className="other-videos-heading">Select video to play</h4>
+              <div className="other-videos-header-row">
+                <h4 className="other-videos-heading">Select video to play</h4>
+                <a 
+                  href="https://www.youtube.com/@HealthLinkDimensions" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="view-channel-link"
+                >
+                  View All on YouTube <ExternalLink size={14} />
+                </a>
+              </div>
               <div className="other-videos-grid">
                 {otherVideos.map((video) => (
                   <motion.div
                     key={video.id}
                     className="video-thumbnail-card"
                     whileHover={{ y: -5, scale: 1.02 }}
-                    onClick={() => setActiveVideo(video)}
+                    onClick={() => setSelectedVideoId(video.id)}
                     layoutId={`card-${video.id}`}
                   >
                     <div className="thumbnail-wrapper">
@@ -130,6 +165,7 @@ const LatestVideos = () => {
                         src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} 
                         alt={video.title} 
                         className="thumbnail-img" 
+                        loading="lazy"
                       />
                       <span className="duration-tag">{video.duration}</span>
                       <div className="thumbnail-overlay">

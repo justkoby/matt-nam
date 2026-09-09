@@ -28,26 +28,26 @@
   line-height: 1.4;
 }
 
-.updates-widget-container {
-  width: 100%;
+/* Posts List Feed */
+.featured-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 16px;
-  min-height: 400px;
-  /* Premium subtle shadow */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  margin: 0 auto 40px auto;
 }
 
-/* Featured Post Card Styles */
+/* Post Card Styles */
 .featured-post-card {
   display: flex;
   background: var(--primary-white);
   border-radius: 20px;
   border: 1px solid var(--border-light);
   overflow: hidden;
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto 60px auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  margin: 0 auto 50px auto;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
   transition: var(--transition);
 }
 
@@ -58,8 +58,10 @@
 
 .featured-post-image-container {
   position: relative;
-  flex: 1.4;
-  min-height: 350px;
+  flex: 0 0 440px;
+  max-width: 440px;
+  min-height: 400px;
+  background: #0d172e;
   overflow: hidden;
 }
 
@@ -67,7 +69,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  object-position: center;
+  transition: transform 0.4s ease;
 }
 
 .featured-post-card:hover .featured-post-img {
@@ -86,11 +89,13 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .featured-post-content {
-  flex: 0.9;
-  padding: 40px;
+  flex: 1;
+  padding: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,15 +105,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 15px;
-  font-size: 0.85rem;
+  margin-bottom: 14px;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
 .featured-post-source {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-weight: 600;
   color: #0077b5; /* LinkedIn Color */
 }
@@ -123,17 +128,17 @@
 }
 
 .featured-post-title {
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   color: var(--primary-black);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.25;
 }
 
 .featured-post-description {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--text-main);
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.65;
+  margin-bottom: 24px;
 }
 
 .featured-post-link {
@@ -141,6 +146,7 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
+  font-size: 0.95rem;
   color: var(--primary-black);
   border-bottom: 2px solid var(--accent-gold);
   padding-bottom: 4px;
@@ -150,6 +156,40 @@
 
 .featured-post-link:hover {
   color: var(--accent-gold);
+  transform: translateX(3px);
+}
+
+/* LinkedIn Profile CTA Button */
+.updates-profile-cta {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 60px auto;
+}
+
+.updates-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: var(--primary-black);
+  color: var(--primary-white);
+  border: 1px solid var(--primary-black);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.updates-profile-btn:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 119, 181, 0.25);
+}
+
+.profile-btn-icon {
+  fill: currentColor;
 }
 
 /* Divider between featured and other feed */
@@ -181,6 +221,15 @@
   margin-left: 1.5em;
 }
 
+.updates-widget-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  min-height: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
 @media (max-width: 992px) {
   .updates {
     padding: 60px 0;
@@ -194,26 +243,42 @@
     font-size: 1.15rem;
   }
 
-  .featured-post-card {
-    flex-direction: column;
-    margin-bottom: 40px;
+  .featured-posts-list {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .featured-post-card,
+  .featured-post-card:nth-child(even) {
+    flex-direction: column !important;
   }
 
   .featured-post-image-container {
-    min-height: 250px;
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .featured-post-content {
-    padding: 30px 20px;
+    padding: 30px 24px;
   }
 
   .featured-post-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.45rem;
+    margin-bottom: 14px;
   }
 
   .featured-post-description {
-    font-size: 1rem;
+    font-size: 0.98rem;
     margin-bottom: 20px;
+  }
+
+  .updates-profile-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.9rem;
   }
 }

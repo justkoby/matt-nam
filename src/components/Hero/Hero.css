@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding-top: 100px;
-  background: linear-gradient(to right, #000000 0%, #000000 35%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%), url('/matt-hero.webp') no-repeat right center / cover;
+  background: linear-gradient(to right, #000000 0%, #000000 35%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%), url('/matt-hero copy-v2.webp') no-repeat right center / cover;
   overflow: hidden;
 }
 
@@ -62,12 +62,15 @@
 .hero .btn-primary {
   background-color: var(--primary-white);
   color: var(--primary-black);
+  border: 1px solid var(--primary-white);
 }
 
 .hero .btn-primary:hover {
-  background-color: var(--secondary-grey);
+  background-color: #000000;
+  border-color: var(--primary-white);
+  color: var(--primary-white);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .hero .btn-outline {
@@ -77,10 +80,11 @@
 }
 
 .hero .btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--primary-white);
   border-color: var(--primary-white);
-  color: var(--primary-white);
+  color: var(--primary-black);
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
 }
 
 .hero-divider {
@@ -106,7 +110,7 @@
 
 @media (max-width: 992px) {
   .hero {
-    background: url('/matt-hero.jpg') no-repeat center center / cover;
+    background: url('/matt-hero copy-v2.jpg') no-repeat center center / cover;
     min-height: 50vh;
     height: 50vh;
     padding-top: 0;

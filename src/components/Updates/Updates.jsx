@@ -5,13 +5,15 @@ import './Updates.css';
 
 const Updates = () => {
   useEffect(() => {
-    // Dynamically load the Elfsight platform script
+    // Ensure Elfsight script is present and initialized
     const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
     if (!existingScript) {
       const script = document.createElement('script');
       script.src = 'https://elfsightcdn.com/platform.js';
       script.async = true;
       document.body.appendChild(script);
+    } else if (window.eapps && typeof window.eapps.init === 'function') {
+      window.eapps.init();
     }
   }, []);
 
@@ -26,11 +28,11 @@ const Updates = () => {
           viewport={{ once: true }}
         >
           <h2 className="updates-title">What's Happening?</h2>
-          <p className="updates-subtitle">Keep up to date with what's going on with Matt.</p>
+          <p className="updates-subtitle">Keep up to date with conversations, insights, and media with Matt.</p>
         </motion.div>
 
         {/* Featured Post Card */}
-        <motion.div
+        <motion.article
           className="featured-post-card"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,8 +41,8 @@ const Updates = () => {
         >
           <div className="featured-post-image-container">
             <img 
-              src="/shtikkfd.png" 
-              alt="Pharma Media in Cannes 2026" 
+              src="/ep-7.png" 
+              alt="HealthLink Signals Episode 7 with Scott Phillips and host Matt Nam" 
               className="featured-post-img"
             />
             <div className="featured-post-tag">Featured Post</div>
@@ -48,31 +50,51 @@ const Updates = () => {
           <div className="featured-post-content">
             <div className="featured-post-meta">
               <span className="featured-post-source">
-                <Linkedin size={16} className="linkedin-icon" /> LinkedIn
+                <Linkedin size={16} className="linkedin-icon" /> solli
               </span>
               <span className="featured-post-dot">•</span>
-              <span className="featured-post-date">June 30, 2026</span>
+              <span className="featured-post-date">Recent</span>
             </div>
-            <h3 className="featured-post-title">Pharma Media in Cannes 2026</h3>
+            <h3 className="featured-post-title">HealthLink Signals — Episode 7: Multimodal Data & HCP Engagement</h3>
             <p className="featured-post-description">
-              As part of the Pharma Media in Cannes 2026 feature, Matt Nam, Sr. Director of Omnichannel Strategy at HealthLink Dimensions, shares why healthcare marketing succeeds when it focuses on context, continuity and trust rather than scale alone. 
-              From rethinking omnichannel as a connected experience instead of simply a distribution strategy to recognising that the richest insights come from healthcare's unique niches, Matt explores why the future of engagement is built around understanding the moments that matter.
+              In Episode 7 of HealthLink Signals, Scott Phillips, Vice President of Real World Data at Diaceutics PLC, and host Matt Nam explore why recency, context, and multimodal data are critical to identifying and engaging the right healthcare professionals at the right moment.
             </p>
             <a 
-              href="https://www.linkedin.com/posts/solli-global_pharmamedia-canneslions2026-healthcaremarketing-activity-7480969022776426496-8IgS" 
+              href="https://www.linkedin.com/posts/solli-global_healthlinksignals-healthcaredata-pharmamedia-activity-7500160622563631104-EE72?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB-TRwwBIC9IwJtZnW0VcG1mkXnGOUtgUfI" 
               target="_blank" 
               rel="noopener noreferrer"
               className="featured-post-link"
             >
-              View on LinkedIn <ExternalLink size={16} />
+              Watch Episode on LinkedIn <ExternalLink size={16} />
             </a>
           </div>
+        </motion.article>
+
+        {/* View All Profile Activity Link */}
+        <motion.div 
+          className="updates-profile-cta"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <a 
+            href="https://www.linkedin.com/in/mattnam/recent-activity/all/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="updates-profile-btn"
+          >
+            <Linkedin size={18} className="profile-btn-icon" />
+            <span>Follow & View All Recent Activity on LinkedIn</span>
+            <ExternalLink size={16} />
+          </a>
         </motion.div>
 
         <div className="updates-divider">
           <span>More Updates</span>
         </div>
 
+        {/* Elfsight LinkedIn Feed Widget */}
         <motion.div 
           className="updates-widget-container"
           initial={{ opacity: 0, y: 40 }}
@@ -88,4 +110,3 @@ const Updates = () => {
 };
 
 export default Updates;
-
