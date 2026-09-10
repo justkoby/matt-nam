@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding-top: 100px;
-  background: linear-gradient(to right, #000000 0%, #000000 35%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%), url('/matt-hero copy-v2.webp') no-repeat right center / cover;
+  background: linear-gradient(to right, #000000 0%, #000000 35%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%), url('/matt-hero copy-v3.webp') no-repeat right center / cover;
   overflow: hidden;
 }
 
@@ -110,9 +110,10 @@
 
 @media (max-width: 992px) {
   .hero {
-    background: url('/matt-hero copy-v2.jpg') no-repeat center center / cover;
-    min-height: 50vh;
-    height: 50vh;
+    background: url('/matt-hero copy-v3-.mobile.webp') no-repeat center top / cover;
+    min-height: unset;
+    height: auto;
+    aspect-ratio: 500 / 600;
     padding-top: 0;
   }
   
